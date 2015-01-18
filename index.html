@@ -1,0 +1,167 @@
+<html>
+	<head>
+		<!-- Google Material Design / materialize.css -->
+		<link type="text/css" rel="stylesheet" href="css/materialize.css">
+		<!-- style.css -->
+		<link type="text/css" rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<nav>
+			<div class="container">
+				<div class="nav-wrapper">
+					<ul class="left side-nav">
+						<li>
+							<a class="tooltipped" data-click="search" data-activates="search_menu" data-position="bottom" data-tooltip="Search" href="#"><i class="small mdi-action-search"></i></a>
+						</li>
+					</ul>
+					<ul class="right side-nav">
+						<li>
+							<a class="tooltipped modal-trigger" data-click="add" data-position="bottom" data-tooltip="Add Song" href="#add_modal"><i class="small mdi-content-add"></i></a>
+						</li>
+						<li>
+							<a class="tooltipped" data-click="drop" data-position="bottom" data-tooltip="Drop Song" href="#"><i class="small mdi-content-remove"></i></a>
+						</li>
+						<li>
+							<a class="tooltipped" data-click="veto" data-position="bottom" data-tooltip="Veto Song" href="#"><i class="small mdi-av-fast-forward"></i></a>
+						</li>
+						<li>
+							<a class="tooltipped modal-trigger" data-click="scheme" data-position="bottom" data-tooltip="Change Colour Scheme" href="#colour_modal"><i class="small mdi-navigation-more-vert"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="row queue">
+			<div class="col s12 top_tabs">
+				<ul class="tabs">
+					<li class="tab col s6"><a href="#queue">Queue</a></li>
+					<li class="tab col s6"><a href="#playlist">Playlist</a></li>
+				</ul>
+			</div>
+			<div id="queue" class="col s12">
+				<span class="empty queue_empty">
+					<div>
+						<div>
+							<a class="waves-effect waves-light btn login_button modal-trigger" href="#login_modal">Login</a>
+							<h5 class="grey-text no_queue">There are no requests in the queue.</h5>
+						</div>
+					</div>
+				</span>
+			</div>
+			<div id="playlist" class="col s12">
+				<span class="empty playlist_empty">
+					<div>
+						<div>
+							<h5 class="grey-text no_queue">There are no requests in your playlist.</h5>
+						</div>
+					</div>
+				</span>
+			</div>
+		</div>
+		<div id="add_modal" class="modal">
+			<div class="input-field">
+				<input id="add_song" type="text" />
+				<label for="add_song">Link</label>
+			</div>
+			<a class="waves-effect waves-light btn" href="#">
+				Submit
+				<i class="mdi-content-send right"></i>
+			</a>
+		</div>
+		<div id="colour_modal" class="modal">
+			<a data-colour="#f44336" href="#"></a>
+			<a data-colour="#fb8c00" href="#"></a>
+			<a data-colour="#ffc107" href="#"></a>
+			<a data-colour="#fdd835" href="#"></a>
+			<a data-colour="#cddc39" href="#"></a>
+			<a data-colour="#4caf50" href="#"></a>
+			<a data-colour="#2196f3" href="#"></a>
+			<a data-colour="#3f51b5" href="#"></a>
+			<a data-colour="#673ab7" href="#"></a>
+			<a data-colour="#9c27b0" href="#"></a>
+		</div>
+		<div id="login_modal" class="modal">
+			<div class="input-field">
+				<input id="login_user" type="text" />
+				<label for="login_user">Username</label>
+			</div>
+			<div class="input-field">
+				<input id="login_pass" type="password" />
+				<label for="login_pass">Password</label>
+			</div>
+			<a class="waves-effect waves-light btn" href="#">
+				Submit
+				<i class="mdi-content-send right"></i>
+			</a>
+		</div>
+		<ul id="search_menu" class="side-nav full">
+			<div class="row search_list">
+				<div class="col s12">
+					<span>
+						<div>
+							<div class="preloader-wrapper active">
+								<div class="spinner-layer spinner-blue">
+									<div class="circle-clipper left">
+										<div class="circle"></div>
+									</div>
+									<div class="gap-patch">
+										<div class="circle"></div>
+									</div>
+									<div class="circle-clipper right">
+										<div class="circle"></div>
+									</div>
+								</div>
+								<div class="spinner-layer spinner-red">
+									<div class="circle-clipper left">
+										<div class="circle"></div>
+									</div>
+									<div class="gap-patch">
+										<div class="circle"></div>
+									</div>
+									<div class="circle-clipper right">
+										<div class="circle"></div>
+									</div>
+								</div>
+								<div class="spinner-layer spinner-yellow">
+									<div class="circle-clipper left">
+										<div class="circle"></div>
+									</div>
+									<div class="gap-patch">
+										<div class="circle"></div>
+									</div>
+									<div class="circle-clipper right">
+										<div class="circle"></div>
+									</div>
+								</div>
+								<div class="spinner-layer spinner-green">
+									<div class="circle-clipper left">
+										<div class="circle"></div>
+									</div>
+									<div class="gap-patch">
+										<div class="circle"></div>
+									</div>
+									<div class="circle-clipper right">
+										<div class="circle"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</span>
+				</div>
+			</div>
+			<div class="row search_side z-depth-2">
+				<div class="input-field col s12">
+					<i class="mdi-action-search prefix"></i>
+					<input id="search_prefix" type="text" />
+					<label for="search_prefix">Search</label>
+				</div>
+			</div>
+		</ul>
+		<!-- jQuery 2.1.1 -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<!-- materialize.js -->
+		<script type="text/javascript" src="js/materialize.js"></script>
+		<!-- index.js -->
+		<script type="text/javascript" src="js/index.js"></script>
+	</body>
+</html>
