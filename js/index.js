@@ -1,3 +1,10 @@
+/*
+ * Source of dJServer: https://github.com/WinneonSword/wa.git
+ * dJServer is the server portion of this extension, and it handles all
+ * of the internal logic for the dJ. Every single HTTP request sent to
+ * http://worldscolli.de/utils/dj is the dJServer.
+ */
+
 var bg_page  = chrome.extension.getBackgroundPage();
 var search_timeout = undefined;
 var ctrl = false;
@@ -207,7 +214,7 @@ function add_song(url){
 			toast(data.data.message, 1000);
 			refresh();
 		} else if (data.type == "message"){
-			toast(data.data.message + " Added request to your playlist.", 1000);
+			toast(data.data.message, 1000);
 		}
 	});
 }
@@ -287,6 +294,7 @@ function create_item(title, link, user, secs, thumb, first, search, playlist){
 		}).text("Add")).append($("<a/>", {
 			"class": "waves-effect waves-light btn",
 			"href": link,
+			"title": title + "\n" + link,
 			"target": "_blank"
 		}).text("Open in new tab")));
 	}
@@ -300,6 +308,7 @@ function create_item(title, link, user, secs, thumb, first, search, playlist){
 		}).text("Remove")).append($("<a/>", {
 			"class": "waves-effect waves-light btn",
 			"href": link,
+			"title": title + "\n" + link,
 			"target": "_blank"
 		}).text("Open in new tab")));
 	}
@@ -317,7 +326,7 @@ function create_item(title, link, user, secs, thumb, first, search, playlist){
 		"class": "row title"
 	}).append($("<a/>", {
 		"href": link,
-		"title": title,
+		"title": title + "\n" + link,
 		"target": "_blank"
 	}).text(title))).append($("<div/>", {
 		"class": "row submitter"
